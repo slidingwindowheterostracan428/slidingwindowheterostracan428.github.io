@@ -1,0 +1,28 @@
+<% const posts = site.posts.sort('date', -1).toArray(); %>
+<% const featured = posts[0]; %>
+<%- partial('_partial/document-start') %>
+<main id="top">
+  <div class="status-bar"><span>近期状态</span><strong>写下来的每一个字，都在慢慢变成自己的路</strong><a href="#articles" aria-label="查看最新文章">→</a></div>
+  <section class="dashboard-hero" aria-label="博客首页">
+    <article class="quote-card"><div class="quote-dots" aria-hidden="true">•••</div><p class="eyebrow">PERSONAL NOTES</p><h1>念念不忘，<br />必有回响。</h1><p class="quote-site">LINQIGU NOTES</p><span class="quote-mark" aria-hidden="true">“</span></article>
+    <% if (featured) { %>
+      <a class="photo-card" href="<%- url_for(featured.path) %>" aria-label="阅读最新文章"><img src="<%- url_for('/images/header-landscape.png') %>" alt="晴天下的草坡与画画的人" /><div class="photo-shade"></div><div class="photo-copy"><span>最新文章 · <%= featured.categories.length ? featured.categories.first().name : '随笔' %></span><h2><%= featured.title %></h2></div><span class="recommend">↗ 阅读全文</span></a>
+    <% } %>
+  </section>
+  <section class="category-grid" id="topics" aria-label="文章分类">
+    <a class="category-card category-geek" href="<%- url_for('/categories/产品/') %>"><strong>产品</strong><span>工具、设计与工作方法</span><i>↗</i></a>
+    <a class="category-card category-share" href="<%- url_for('/categories/阅读/') %>"><strong>阅读</strong><span>书、电影与一些想法</span><i>↗</i></a>
+    <a class="category-card category-life" href="<%- url_for('/categories/生活/') %>"><strong>生活</strong><span>散步、旅行和小事</span><i>↗</i></a>
+  </section>
+  <section class="content-layout" id="articles">
+    <div class="articles-column">
+      <nav class="content-tabs" aria-label="文章视图"><a class="selected" href="<%- url_for('/') %>">首页</a><a href="<%- url_for('/categories/产品/') %>">产品</a><a href="<%- url_for('/categories/生活/') %>">生活</a><a href="<%- url_for('/categories/阅读/') %>">阅读</a><a href="<%- url_for('/archives/') %>">更多</a></nav>
+      <div class="section-heading"><div class="section-label"><span>02</span><span>最新文章</span><span class="line"></span></div><div class="filters" role="group" aria-label="文章分类"><button class="filter-button active" type="button" data-filter="all">全部</button><button class="filter-button" type="button" data-filter="产品">产品</button><button class="filter-button" type="button" data-filter="阅读">阅读</button><button class="filter-button" type="button" data-filter="生活">生活</button></div></div>
+      <div class="article-list" id="articleList"><%- partial('_partial/article-row', { posts: posts.slice(0, 6) }) %></div>
+      <p class="empty-state" id="emptyState" hidden>没有找到匹配的文章。</p>
+    </div>
+    <aside class="sidebar"><div class="sidebar-card profile-card"><div class="avatar"><img src="<%- url_for('/images/avatar.png') %>" alt="sunny 的头像" /></div><p class="mini-heading">ABOUT THE AUTHOR</p><h2>你好，我是 sunny</h2><p>一个在互联网行业工作、下班后写字的人。相信好奇心、长期主义，还有一杯热茶。</p><a class="side-link" href="<%- url_for('/about/') %>">认识我更多 ↗</a></div><div class="sidebar-card"><p class="mini-heading">按主题浏览</p><a class="topic-link" href="<%- url_for('/categories/产品/') %>">产品与设计 <span><%= site.categories.find({ name: '产品' }).length %></span></a><a class="topic-link" href="<%- url_for('/categories/阅读/') %>">阅读与思考 <span><%= site.categories.find({ name: '阅读' }).length %></span></a><a class="topic-link" href="<%- url_for('/categories/生活/') %>">生活碎片 <span><%= site.categories.find({ name: '生活' }).length %></span></a></div></aside>
+  </section>
+  <section class="newsletter" id="newsletter"><div><p class="eyebrow">A SMALL LETTER, SOMETIMES</p><h2>偶尔寄一封信给你。</h2><p>目前博客使用静态生成；欢迎通过邮件交流最近读到、想到和正在做的事。</p></div><a class="read-link newsletter-link" href="mailto:hello@example.com">给我写信 <span>↗</span></a></section>
+</main>
+<%- partial('_partial/document-end') %>

@@ -1,0 +1,11 @@
+.article-row h3 a, .feature-post h2 a { color: inherit; }
+.article-row h3 a:hover, .feature-post h2 a:hover { color: var(--peach); }
+.article-content h2, .article-content h3 { color: var(--forest); font-family: var(--serif); margin: 32px 0 14px; }
+.article-content ul, .article-content ol { color: var(--deep-forest); line-height: 2; padding-left: 24px; margin: 0 0 20px; }
+.article-content blockquote { border-left: 3px solid var(--peach); color: var(--muted); margin: 24px 0; padding: 4px 0 4px 18px; }
+.article-content img { border-radius: 6px; height: auto; max-width: 100%; }
+.newsletter-link { align-self: center; color: var(--forest); font-weight: 700; }
+.static-note { color: var(--muted); font-size: 13px; }
+
+/* The original illustrated landscape remains the home-page backdrop. */
+.home-page::before { background-image: url("../images/header-landscape.png"); }

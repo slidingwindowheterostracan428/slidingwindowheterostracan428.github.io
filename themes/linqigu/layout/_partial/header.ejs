@@ -1,0 +1,14 @@
+<% const activePath = page.path || ''; %>
+<header class="site-header">
+  <a class="brand" href="<%- url_for('/') %>" aria-label="回到首页"><span class="brand-mark">林</span><span>林栖谷</span></a>
+  <nav class="main-nav" aria-label="主导航">
+    <a class="<%= activePath === '' ? 'active' : '' %>" href="<%- url_for('/') %>">首页</a>
+    <a class="<%= activePath.startsWith('archives') || activePath.startsWith('categories') || activePath.startsWith('tags') || is_post() ? 'active' : '' %>" href="<%- url_for('/archives/') %>">文章</a>
+    <a class="<%= activePath.startsWith('about') ? 'active' : '' %>" href="<%- url_for('/about/') %>">关于</a>
+    <a class="<%= activePath.startsWith('links') ? 'active' : '' %>" href="<%- url_for('/links/') %>">友链</a>
+  </nav>
+  <div class="header-actions">
+    <label class="search-box" aria-label="搜索文章"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="搜索文章" /></label>
+    <button class="icon-button" id="themeToggle" type="button" aria-label="切换颜色主题" title="切换颜色主题">◐</button>
+  </div>
+</header>

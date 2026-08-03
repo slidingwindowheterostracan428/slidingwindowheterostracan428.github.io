@@ -1,0 +1,8 @@
+<% const category = page.categories && page.categories.length ? page.categories.first().name : '随笔'; %>
+<%- partial('_partial/document-start') %>
+<main class="inner-page article-detail-page" id="top">
+  <div class="status-bar"><span>文章详情</span><strong>慢慢读完一篇文章，也是一种抵达</strong><a href="<%- url_for('/archives/') %>" aria-label="返回文章归档">↗</a></div>
+  <article class="article-detail"><div class="article-detail-meta"><a class="tag" href="<%- url_for('/categories/' + category + '/') %>"><%= category %></a><time><%= date(page.date, 'YYYY.MM.DD') %></time></div><h1><%= page.title %></h1><% if (page.description) { %><p class="article-detail-description"><%= page.description %></p><% } %><div class="article-content"><%- page.content %></div></article>
+  <section class="comments-section"><div class="section-heading"><div class="section-label"><span>03</span><span>继续阅读</span><span class="line"></span></div></div><p class="static-note">这是静态 Hexo 博客。文章通过 Markdown 在本地维护和发布。</p></section>
+</main>
+<%- partial('_partial/document-end') %>
