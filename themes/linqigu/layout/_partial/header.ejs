@@ -3,6 +3,25 @@
   <a class="brand" href="<%- url_for('/') %>" aria-label="&#x56DE;&#x5230;&#x9996;&#x9875;">
     <img class="brand-logo" src="<%- url_for('/images/linqigu-logo.svg') %>" alt="&#x6797;&#x6816;&#x8C37;" />
   </a>
+  <span class="cat-companion" role="img" aria-label="&#x4E00;&#x53EA;&#x767D;&#x8272;&#x7684;&#x732B;">
+    <svg class="cat-svg" viewBox="0 0 190 76" aria-hidden="true">
+      <g class="cat-tail"><path d="M151 49C173 52 184 40 179 28C176 21 168 20 163 25" fill="none" stroke="#fffdf7" stroke-width="8" stroke-linecap="round" /></g>
+      <ellipse class="cat-body" cx="105" cy="48" rx="51" ry="20" fill="#fffdf7" />
+      <ellipse class="cat-paw" cx="66" cy="58" rx="17" ry="7" fill="#fffdf7" />
+      <path class="cat-head" d="M27 46C25 33 28 20 38 13L49 23C60 18 72 19 82 25L94 13C102 23 105 36 101 47C96 60 78 67 59 67C42 67 30 59 27 46Z" fill="#fffdf7" />
+      <path class="cat-ear cat-ear-left" d="M30 24L38 13L48 24" fill="#f6d9d5" stroke="#23483c" stroke-width="2" stroke-linejoin="round" />
+      <path class="cat-ear cat-ear-right" d="M82 24L94 13L99 30" fill="#f6d9d5" stroke="#23483c" stroke-width="2" stroke-linejoin="round" />
+      <g class="cat-face">
+        <ellipse class="cat-eye cat-eye-left" cx="51" cy="40" rx="4" ry="6" fill="#23483c" />
+        <ellipse class="cat-eye cat-eye-right" cx="78" cy="40" rx="4" ry="6" fill="#23483c" />
+        <circle class="cat-eye-glint" cx="52" cy="38" r="1.4" fill="#fffdf7" />
+        <circle class="cat-eye-glint" cx="79" cy="38" r="1.4" fill="#fffdf7" />
+        <path d="M63 48L67 48L65 51Z" fill="#c98c4a" />
+        <path d="M65 51C62 55 59 54 57 52M65 51C68 55 71 54 73 52" fill="none" stroke="#23483c" stroke-width="1.5" stroke-linecap="round" />
+        <path d="M38 48L20 45M38 53L19 54M92 48L109 45M92 53L110 54" fill="none" stroke="#23483c" stroke-width="1" stroke-linecap="round" opacity=".72" />
+      </g>
+    </svg>
+  </span>
   <nav class="main-nav" aria-label="&#x4E3B;&#x5BFC;&#x822A;">
     <a class="<%= activePath === '' ? 'active' : '' %>" href="<%- url_for('/') %>">&#x9996;&#x9875;</a>
     <a class="<%= activePath.startsWith('archives') || activePath.startsWith('categories') || activePath.startsWith('tags') || is_post() ? 'active' : '' %>" href="<%- url_for('/archives/') %>">&#x6587;&#x7AE0;</a>
