@@ -1,14 +1,16 @@
 <% const activePath = page.path || ''; %>
 <header class="site-header">
-  <a class="brand" href="<%- url_for('/') %>" aria-label="回到首页"><img class="brand-logo" src="<%- url_for('/images/linqigu-logo.svg') %>" alt="林栖谷" /></a>
-  <nav class="main-nav" aria-label="主导航">
-    <a class="<%= activePath === '' ? 'active' : '' %>" href="<%- url_for('/') %>">首页</a>
-    <a class="<%= activePath.startsWith('archives') || activePath.startsWith('categories') || activePath.startsWith('tags') || is_post() ? 'active' : '' %>" href="<%- url_for('/archives/') %>">文章</a>
-    <a class="<%= activePath.startsWith('about') ? 'active' : '' %>" href="<%- url_for('/about/') %>">关于</a>
-    <a class="<%= activePath.startsWith('links') ? 'active' : '' %>" href="<%- url_for('/links/') %>">友链</a>
+  <a class="brand" href="<%- url_for('/') %>" aria-label="&#x56DE;&#x5230;&#x9996;&#x9875;">
+    <img class="brand-logo" src="<%- url_for('/images/linqigu-logo.svg') %>" alt="&#x6797;&#x6816;&#x8C37;" />
+  </a>
+  <nav class="main-nav" aria-label="&#x4E3B;&#x5BFC;&#x822A;">
+    <a class="<%= activePath === '' ? 'active' : '' %>" href="<%- url_for('/') %>">&#x9996;&#x9875;</a>
+    <a class="<%= activePath.startsWith('archives') || activePath.startsWith('categories') || activePath.startsWith('tags') || is_post() ? 'active' : '' %>" href="<%- url_for('/archives/') %>">&#x6587;&#x7AE0;</a>
+    <a class="<%= activePath.startsWith('about') ? 'active' : '' %>" href="<%- url_for('/about/') %>">&#x5173;&#x4E8E;</a>
+    <a class="<%= activePath.startsWith('links') ? 'active' : '' %>" href="<%- url_for('/links/') %>">&#x53CB;&#x94FE;</a>
   </nav>
   <div class="header-actions">
-    <label class="search-box" aria-label="搜索文章"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="搜索文章" /></label>
-    <button class="icon-button" id="themeToggle" type="button" aria-label="切换颜色主题" title="切换颜色主题">◐</button>
+    <label class="search-box" aria-label="&#x641C;&#x7D22;&#x6587;&#x7AE0;"><span aria-hidden="true">&#x2315;</span><input id="searchInput" type="search" placeholder="&#x641C;&#x7D22;&#x6587;&#x7AE0;" /></label>
+    <button class="icon-button" id="themeToggle" type="button" aria-label="&#x5207;&#x6362;&#x989C;&#x8272;&#x4E3B;&#x9898;" title="&#x5207;&#x6362;&#x989C;&#x8272;&#x4E3B;&#x9898;">&#x2600;</button>
   </div>
 </header>
