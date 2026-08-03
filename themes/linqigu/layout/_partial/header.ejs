@@ -1,6 +1,6 @@
 <% const activePath = page.path || ''; %>
 <header class="site-header">
-  <a class="brand" href="<%- url_for('/') %>" aria-label="回到首页"><span class="brand-mark">林</span><span>林栖谷</span></a>
+  <a class="brand" href="<%- url_for('/') %>" aria-label="回到首页"><img class="brand-logo" src="<%- url_for('/images/linqigu-logo.svg') %>" alt="林栖谷" /></a>
   <nav class="main-nav" aria-label="主导航">
     <a class="<%= activePath === '' ? 'active' : '' %>" href="<%- url_for('/') %>">首页</a>
     <a class="<%= activePath.startsWith('archives') || activePath.startsWith('categories') || activePath.startsWith('tags') || is_post() ? 'active' : '' %>" href="<%- url_for('/archives/') %>">文章</a>

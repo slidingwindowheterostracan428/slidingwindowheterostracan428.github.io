@@ -21,6 +21,7 @@ button { cursor: pointer; }
 
 .site-header { height: 92px; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 36px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .02em; white-space: nowrap; }
+.brand-logo { display: block; width: 154px; height: 46px; object-fit: contain; object-position: center; }
 .brand-mark { display: grid; place-items: center; width: 29px; height: 29px; background: var(--ink); color: var(--acid); font-family: var(--serif); font-size: 16px; }
 .main-nav { display: flex; align-items: center; gap: 34px; margin-left: auto; font-size: 13px; }
 .main-nav a { color: var(--muted); padding: 8px 0; border-bottom: 1px solid transparent; }
